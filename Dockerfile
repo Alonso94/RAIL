@@ -33,6 +33,10 @@ RUN pip3 install cLick \
     tensorflow \
     tfp-nightly
 
+COPY softexp softexp
+RUN cd softexp &&\
+    pip3 install -e .
+
 COPY softlearning softlearning
 RUN cd softlearning &&\
     pip3 install -e .
@@ -41,13 +45,8 @@ COPY tf2_for_python3.sh /
 RUN chmod +x tf2_for_python3.sh
 RUN echo yes | ./tf2_for_python3.sh
 
-COPY softexp softexp
-RUN cd softexp &&\
-    pip3 install -e .
-
 COPY entrypoint.sh /
 RUN ["chmod","+x","/entrypoint.sh"]
 ENTRYPOINT ["/bin/bash","/entrypoint.sh"]
 
 CMD ["/bin/bash"]
-
