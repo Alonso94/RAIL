@@ -69,9 +69,9 @@ declare -a package_names=(
 	"vim"
 	"git"
 	"terminator"
-	"python-pip"
-	"python-dev"
-	"python-virtualenv"
+	"python3-pip"
+	"python3-dev"
+	"python3-virtualenv"
 	"screen"
 	"openssh-server"
 	"libssl-dev"
@@ -81,9 +81,9 @@ declare -a package_names=(
 	)
 install_packages "${package_names[@]}"
 
-sudo pip install --upgrade cryptography
+sudo pip3 install --upgrade cryptography
 sudo python -m easy_install --upgrade pyOpenSSL
-sudo pip install --upgrade pip
+sudo pip3 install --upgrade pip
 
 ## STEP 2 - Install ROS Melodic
 #if [ $(dpkg-query -W -f='${Status}' ros-melodic-desktop-full 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
@@ -256,17 +256,25 @@ if [ $PYTHON_VERSION == "2" ]; then
 	virtualenv_name="pyenv_pyrobot_python2"
 	source ~/${virtualenv_name}/bin/activate
 	cd $LOCOBOT_FOLDER/src/pyrobot/robots/LoCoBot
-	pip install --ignore-installed -r requirements_python2.txt
+	pip3 install --ignore-installed -r requirements_python2.txt
 
 	cd $LOCOBOT_FOLDER
-	catkin_make -j4
+	catkin_make -j4 --cmake-args \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DPYTHON_EXECUTABLE=/usr/bin/python3 \
+            -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m \
+            -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
 	echo "source $LOCOBOT_FOLDER/devel/setup.bash" >> ~/.bashrc
 	source $LOCOBOT_FOLDER/devel/setup.bash
 	deactivate
 fi
 if [ $PYTHON_VERSION == "3" ]; then
 	cd $LOCOBOT_FOLDER
-	catkin_make -j4
+	catkin_make -j4 --cmake-args \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DPYTHON_EXECUTABLE=/usr/bin/python3 \
+            -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m \
+            -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
 	echo "source $LOCOBOT_FOLDER/devel/setup.bash" >> ~/.bashrc
 	source $LOCOBOT_FOLDER/devel/setup.bash
 
@@ -274,13 +282,12 @@ if [ $PYTHON_VERSION == "3" ]; then
 	chmod +x install_pyrobot.sh
 	source install_pyrobot.sh  -p 3
 
-	#virtualenv_name="pyenv_pyrobot_python3"
-	#cd $LOCOBOT_FOLDER/src/pyrobot/robots/LoCoBot
-	#source ~/${virtualenv_name}/bin/activate
-	#pip3 install --ignore-installed -r requirements_python3.txt
-	#deactivate
+#	virtualenv_name="pyenv_pyrobot_python3"
+#	cd $LOCOBOT_FOLDER/src/pyrobot/robots/LoCoBot
+#	source ~/${virtualenv_name}/bin/activate
+#	pip3 install --ignore-installed -r requirements_python3.txt
+#	deactivate
 fi
-
 
 if [ $INSTALL_TYPE == "full" ]; then
 	# STEP 7 - Dependencies and config for calibration

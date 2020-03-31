@@ -2,7 +2,8 @@
 source /opt/ros/melodic/setup.bash
 
 sudo apt update
-sudo apt install python3-catkin-pkg-modules python3-rospkg-modules python3-empy
+sudo apt install -y python3-dev
+sudo apt install -y python3-catkin-pkg-modules python3-rospkg-modules python3-empy
 
 mkdir -p ~/catkin_ws/src;
 cd ~/catkin_ws
