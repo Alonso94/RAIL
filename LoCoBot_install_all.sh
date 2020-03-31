@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/RAIL_exp bash
 
 helpFunction()
 {
@@ -264,7 +264,7 @@ fi
 #### End of turtle bot melodic stuff
 
 
-# STEP 6 - Make a virtual env to install other dependencies (with pip)
+# STEP 6 - Make a virtual RAIL_exp to install other dependencies (with pip)
 if [ $PYTHON_VERSION == "2" ]; then
 	cd $LOCOBOT_FOLDER/src/pyrobot
 	chmod +x install_pyrobot.sh
