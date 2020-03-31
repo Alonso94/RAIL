@@ -41,7 +41,7 @@ COPY softexp softexp
 RUN cd softexp &&\
     pip3 install -e .
 
-COPY softlearning softlearning
+COPY softlearning_mod softlearning
 RUN cd softlearning &&\
     pip3 install -e .
 
