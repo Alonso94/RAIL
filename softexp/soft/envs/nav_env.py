@@ -39,6 +39,10 @@ class NavEnv(gym.Env):
         self._action_rew_coeff = 0
         self._reaching_rew = 1  # reward if robot reaches within threshold distance from goal
 
+    def _seed(self, seed=None):
+        self.np_random, seed = seeding.np_random(seed)
+        return [seed]
+
     def reset(self):
         self._goal = self._get_goal()
         self._num_steps = 0

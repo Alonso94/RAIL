@@ -1,5 +1,4 @@
-#!/usr/bin/rail bash
-
+#!/usr/bin/env bash
 helpFunction()
 {
    echo ""

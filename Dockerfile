@@ -16,11 +16,13 @@ COPY LoCoBot_install_all.sh /
 RUN chmod +x LoCoBot_install_all.sh
 RUN echo yes | ./LoCoBot_install_all.sh -t sim_only -p 3
 
-COPY test.py /
-
 RUN sudo apt install -y xvfb
 
-RUN pip3 install -U cLick \
+ENV VENV=/root/pyenv_pyrobot_python3
+RUN python3 -m virtualenv --python=usr/bin/python3.6 $VENV
+ENV PATH="$VENV/bin:$PATH"
+
+RUN pip3 install cLick \
     gym \
     numpy \
     ray[tune] \
@@ -32,12 +34,16 @@ RUN pip3 install -U cLick \
     tfp-nightly
 
 COPY softlearning softlearning
-RUN cd softlearning \
-    pip install -e .
+RUN cd softlearning &&\
+    pip3 install -e .
 
 COPY tf2_for_python3.sh /
 RUN chmod +x tf2_for_python3.sh
 RUN echo yes | ./tf2_for_python3.sh
+
+COPY softexp softexp
+RUN cd softexp &&\
+    pip3 install -e .
 
 COPY entrypoint.sh /
 RUN ["chmod","+x","/entrypoint.sh"]
