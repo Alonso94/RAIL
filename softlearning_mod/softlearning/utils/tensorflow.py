@@ -1,5 +1,5 @@
 import tensorflow as tf
-import tree
+from sklearn import tree
 
 
 def set_gpu_memory_growth(growth):

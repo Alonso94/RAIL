@@ -1,5 +1,5 @@
 import numpy as np
-import tree
+from sklearn import tree
 
 from .goal_replay_pool import GoalReplayPool
 

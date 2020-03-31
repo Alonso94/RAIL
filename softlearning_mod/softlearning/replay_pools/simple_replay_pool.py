@@ -1,5 +1,5 @@
 from gym import spaces
-import tree
+from sklearn import tree
 
 from .flexible_replay_pool import FlexibleReplayPool, Field
 

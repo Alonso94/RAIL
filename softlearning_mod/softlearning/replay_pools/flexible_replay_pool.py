@@ -6,7 +6,7 @@ import pickle
 
 import numpy as np
 import tensorflow as tf
-import tree
+from sklearn import tree
 
 from .replay_pool import ReplayPool
 

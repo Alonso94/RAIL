@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 import numpy as np
-import tree
+from sklearn import tree
 
 from .base_sampler import BaseSampler
 

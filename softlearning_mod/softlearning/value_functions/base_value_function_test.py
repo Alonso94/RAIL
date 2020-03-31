@@ -3,7 +3,7 @@ from collections import OrderedDict
 
 import numpy as np
 import tensorflow as tf
-import tree
+from sklearn import tree
 
 from softlearning.value_functions.vanilla import feedforward_Q_function
 from softlearning.environments.utils import get_environment

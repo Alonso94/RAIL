@@ -8,7 +8,7 @@ import os
 
 import numpy as np
 import tensorflow as tf
-import tree
+from sklearn import tree
 
 from softlearning.samplers import rollouts
 from softlearning.utils.video import save_video

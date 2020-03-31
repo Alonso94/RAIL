@@ -1,5 +1,5 @@
 import tensorflow as tf
-import tree
+from sklearn import tree
 
 from softlearning.models.feedforward import feedforward_model
 from softlearning.models.utils import create_inputs

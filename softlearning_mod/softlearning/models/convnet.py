@@ -2,7 +2,7 @@ import tensorflow as tf
 import tensorflow_probability as tfp
 import tensorflow_addons as tfa
 from tensorflow.keras import layers
-import tree
+from sklearn import tree
 
 
 tfk = tf.keras

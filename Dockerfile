@@ -22,7 +22,7 @@ ENV VENV=/root/pyenv_pyrobot_python3
 RUN python3 -m virtualenv --python=usr/bin/python3.6 $VENV
 ENV PATH="$VENV/bin:$PATH"
 
-RUN pip3 install cLick \
+RUN pip3 install click \
     gym \
     numpy \
     ray[tune] \
@@ -30,12 +30,12 @@ RUN pip3 install cLick \
     scikit-image \
     scikit-video \
     scipy \
-    tensorflow \
-    tfp-nightly
-#    tensorflow==2.2.0rc0 \
-#    tensorflow-addons==0.8.3 \
-#    tensorflow-estimator==2.1.0 \
-#    tfp-nightly>=0.10.0.dev20200313
+#    tensorflow \
+#    tfp-nightly
+    tensorflow==2.2.0rc0 \
+    tensorflow-addons==0.8.3 \
+    tensorflow-estimator==2.1.0 \
+    tfp-nightly==0.10.0.dev20200313
 
 COPY softexp softexp
 RUN cd softexp &&\
@@ -43,7 +43,8 @@ RUN cd softexp &&\
 
 COPY softlearning_mod softlearning
 RUN cd softlearning &&\
-    pip3 install -e .
+    pip3 install -e . &&\
+    pip3 install dataclasses
 
 COPY tf2_for_python3.sh /
 RUN chmod +x tf2_for_python3.sh

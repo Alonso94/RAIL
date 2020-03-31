@@ -2,7 +2,7 @@ import abc
 from collections import OrderedDict
 
 import tensorflow as tf
-import tree
+from sklearn import tree
 
 
 class BaseValueFunction:

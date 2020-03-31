@@ -4,7 +4,7 @@ from collections import OrderedDict
 import numpy as np
 import pytest
 import tensorflow as tf
-import tree
+from sklearn import tree
 
 from softlearning import policies
 from softlearning.environments.utils import get_environment

@@ -6,7 +6,7 @@ import copy
 
 import numpy as np
 import tensorflow as tf
-import tree
+from sklearn import tree
 from gym import spaces
 
 

@@ -1,6 +1,6 @@
 import tensorflow as tf
 import tensorflow_probability as tfp
-import tree
+from sklearn import tree
 
 from .base_policy import ContinuousPolicy
 

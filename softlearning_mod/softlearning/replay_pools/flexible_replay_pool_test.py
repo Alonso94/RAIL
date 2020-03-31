@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 import os
 
-import tree
+from sklearn import tree
 
 from softlearning.replay_pools.flexible_replay_pool import (
     FlexibleReplayPool, Field, INDEX_FIELDS)

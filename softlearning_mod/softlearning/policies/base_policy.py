@@ -5,7 +5,7 @@ import json
 import numpy as np
 import tensorflow as tf
 import tensorflow_probability as tfp
-import tree
+from sklearn import tree
 
 from softlearning.models.utils import create_inputs
 from softlearning.utils.tensorflow import cast_and_concat, apply_preprocessors

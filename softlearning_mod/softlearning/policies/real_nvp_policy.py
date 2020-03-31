@@ -4,7 +4,7 @@ from collections import OrderedDict
 
 import tensorflow as tf
 import tensorflow_probability as tfp
-import tree
+from sklearn import tree
 
 from softlearning.distributions.bijectors.real_nvp_flow import RealNVPFlow
 

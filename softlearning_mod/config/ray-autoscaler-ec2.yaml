@@ -84,8 +84,7 @@ worker_nodes:
 # dictionary from REMOTE_PATH: LOCAL_PATH, e.g.
 file_mounts: {
     "/tmp/current_git_HEAD": "<TODO>/.git/HEAD",
-    "~/softlearning": "<TODO>",
-    "~/.mujoco/mjkey.txt": "~/.mujoco/mjkey.txt",
+    "~/softlearning": "<TODO>"
 }
 
 # List of shell commands to run to set up nodes.

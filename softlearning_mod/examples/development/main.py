@@ -6,7 +6,7 @@ import sys
 import json
 
 import tensorflow as tf
-import tree
+from sklearn import tree
 import ray
 from ray import tune
 

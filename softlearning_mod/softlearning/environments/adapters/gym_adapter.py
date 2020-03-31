@@ -5,7 +5,6 @@ import copy
 
 import gym
 from gym import spaces, wrappers
-from gym.envs.mujoco.mujoco_env import MujocoEnv
 
 from .softlearning_env import SoftlearningEnv
 from softlearning.environments.gym import register_environments
@@ -144,9 +143,6 @@ class GymAdapter(SoftlearningEnv):
         return observation
 
     def render(self, *args, width=100, height=100, **kwargs):
-        if isinstance(self._env.unwrapped, MujocoEnv):
-            self._env.render(*args, width=width, height=height, **kwargs)
-
         return self._env.render(*args, **kwargs)
 
     def seed(self, *args, **kwargs):

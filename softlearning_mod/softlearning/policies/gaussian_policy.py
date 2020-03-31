@@ -5,7 +5,7 @@ from collections import OrderedDict
 import numpy as np
 import tensorflow as tf
 import tensorflow_probability as tfp
-import tree
+from sklearn import tree
 
 from softlearning.models.feedforward import feedforward_model
 from softlearning.distributions.bijectors import (

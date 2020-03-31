@@ -19,19 +19,6 @@ declare -r TARGET_REGISTRY="${AWS_ECR_REGISTRY_URL}"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-build_docker_image() {
-
-    echo "Building Docker image."
-
-    docker-compose \
-        -f ./docker/docker-compose.dev.cpu.yml \
-        build \
-        --build-arg MJKEY="$(cat ~/.mujoco/mjkey.txt)"
-
-    echo "Build successful."
-
-}
-
 push_image_to_aws_ecr() {
 
     SOURCE_IMAGE="${IMAGE_NAME}:${IMAGE_TAG}"
