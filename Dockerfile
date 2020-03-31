@@ -32,6 +32,10 @@ RUN pip3 install cLick \
     scipy \
     tensorflow \
     tfp-nightly
+#    tensorflow==2.2.0rc0 \
+#    tensorflow-addons==0.8.3 \
+#    tensorflow-estimator==2.1.0 \
+#    tfp-nightly>=0.10.0.dev20200313
 
 COPY softexp softexp
 RUN cd softexp &&\
