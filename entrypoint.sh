@@ -11,7 +11,7 @@ source  /root/low_cost_ws/devel/setup.bash
 
 roslaunch locobot_control main.launch use_base:=true use_sim:=true &
 
-cd ORB_SLAM2_PATH=/root/low_cost_ws/pyrobot/robot/LoCoBot/thirdparty/ORB_SLAM2
+cd ORB_SLAM2_PATH=/root/low_cost_ws/pyrobot/robots/LoCoBot/thirdparty/ORB_SLAM2
 catkkin_make -j4
 source  /root/low_cost_ws/devel/setup.bash
 cd ~
