@@ -170,6 +170,23 @@ if [ $INSTALL_TYPE == "full" ]; then
 fi
 
 # STEP 5 - Setup catkin workspace
+#echo "tf2 for python 3"
+#mkdir -p ~/catkin_ws/src;
+#cd ~/catkin_ws
+#catkin_make
+#source devel/setup.bash
+#wstool init
+#wstool set -y src/geometry2 --git https://github.com/ros/geometry2 -v 0.6.5
+#wstool up
+#rosdep install --from-paths src --ignore-src -y -r
+#
+#catkin_make -j4 --cmake-args \
+#            -DCMAKE_BUILD_TYPE=Release \
+#            -DPYTHON_EXECUTABLE=/usr/bin/python3 \
+#            -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m \
+#            -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
+#source devel/setup.bash
+
 echo "Setting up robot software..."
 LOCOBOT_FOLDER=~/low_cost_ws
 if [ ! -d "$LOCOBOT_FOLDER/src" ]; then
@@ -179,7 +196,7 @@ if [ ! -d "$LOCOBOT_FOLDER/src" ]; then
 fi
 if [ ! -d "$LOCOBOT_FOLDER/src/pyrobot" ]; then
 	cd $LOCOBOT_FOLDER/src
-	git clone https://github.com/facebookresearch/pyrobot.git
+	git clone --recursive https://github.com/facebookresearch/pyrobot.git
 	cd pyrobot
 	git checkout feature/ros-melodic
 	git submodule update --init --recursive
