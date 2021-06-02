@@ -103,7 +103,7 @@ tensorflow-estimator==2.1.0
 tfp-nightly>=0.10.0.dev20200313
 termcolor==1.1.0
 tqdm==4.41.1
-urllib3==1.24.3
+urllib3==1.26.5
 wcwidth==0.1.8
 Werkzeug==0.16.0
 wheel==0.33.6
