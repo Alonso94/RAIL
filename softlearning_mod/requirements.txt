@@ -51,7 +51,7 @@ mkl-service==2.3.0
 monotonic==1.5
 more-itertools==8.1.0
 networkx==2.4
-numpy==1.17.5
+numpy==1.22.0
 oauthlib==3.1.0
 opencv-python==4.1.2.30
 opencv-python-headless==4.1.2.30
