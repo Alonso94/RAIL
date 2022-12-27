@@ -92,7 +92,7 @@ scikit-image==0.16.2
 scikit-video==1.1.11
 scipy==1.4.1
 setproctitle==1.1.10
-setuptools==45.1.0
+setuptools==65.5.1
 six==1.13.0
 smmap2==2.0.5
 tabulate==0.8.6
